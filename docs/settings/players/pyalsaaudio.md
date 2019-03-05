@@ -1,16 +1,16 @@
 
-This Player is based on the [alsa engine](https://larsimmisch.github.io/pyalsaaudio/libalsaaudio.html)
+Questo Player è basato sull'[engine alsa](https://larsimmisch.github.io/pyalsaaudio/libalsaaudio.html)
 
-## Input parameters
+## Parametri d'input
 
-| parameter      | required  | default   | choices     | comment                                                         |
-|----------------|-----------|-----------|-------------|-----------------------------------------------------------------|
-| device         | no        | "default" |             | Select the device to use for alsa                               |
-| convert_to_wav | no        | TRUE      | True, False | Convert the generated file from the TTS into wav before reading |
+| Parametro      |Necessario| Default   |Valori possibili| Commento                                                  |
+|----------------|----------|-----------|----------------|-----------------------------------------------------------|
+| device         | no       | "default" |                | Seleziona il dispositivo da usare per alsa                |
+| convert_to_wav | no       | TRUE      | True, False    | Converti il ​​file generato dal TTS in wav prima di leggere |
 
-## Settings example
+## Esempio d'impostazioni
 
-Here is n example of configuration you would use if your TTS was acapela. As this TTS generate an MP3 file, this last need to be converted into wav.
+Ecco un esempio di configurazione che useresti se il tuo TTS fosse acapela. Poiché questo TTS genera un file MP3, quest'ultimo deve essere convertito in wav.
 ```yaml
 default_player: "pyalsaaudio"
 
@@ -20,10 +20,10 @@ players:
      convert_to_wav: True
 ```
 
-## Notes
+## Note
 
->**Note:** Define the default card to use in the `device` parameter.
-For example, on a Raspberry Pi, the default card can be `sysdefault:CARD=ALSA`
+>**Nota:** Definire la scheda predefinita da utilizzare nel parametro device.
+Ad esempio, su un Raspberry Pi, la scheda predefinita può essere `sysdefault:CARD=ALSA`
 
->**Note:** This Player does not handle mp3 format, converting mp3 to wav might be required if the selected TTS engine generate mp3 file.
+>**Nota:** Questo lettore non gestisce il formato mp3, la conversione da mp3 in wav è necessaria se il engine TTS selezionato genera file mp3.
 

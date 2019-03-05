@@ -1,20 +1,20 @@
-This TTS is based on the [VoiceRSS engine](http://www.voicerss.org/). [Official Documentation here](http://www.voicerss.org/api/documentation.aspx)
+Questo TTS è basato sull'[engine VoiceRSS](http://www.voicerss.org/). [Documentazione Ufficiale qui](http://www.voicerss.org/api/documentation.aspx)
 
-## Input parameters
+## Parametri d'input
 
-| Parameters   | Required | Default              | Choices                                                                           | Comment                                         |
-| ------------ | -------- | -------------------- | --------------------------------------------------------------------------------- | ----------------------------------------------- |
-| language     | YES      |                      | [26 languages](http://www.voicerss.org/api/documentation.aspx), example : "fr-fr" | Languages are identified by the LCID string     |
-| key          | YES      |                      |                                                                                   | register in the official website to get API key |
-| rate         | NO       | 0                    | any int                                                                           | Audio Rate                                      |
-| codec        | NO       | 'MP3'                | 'MP3', 'WAV', 'AAC', 'OGG', 'CAF'                                                 | Audio Codecs                                    |
-| audio_format | NO       | '44khz_16bit_stereo' | [51 choices](http://www.voicerss.org/api/documentation.aspx), '8khz_8bit_mono'    | Audio formats                                   |
-| ssml         | NO       | False                | True / False                                                                      | True if you want ssml (only upgraded plans)     |
-| base64       | NO       | False                | True / False                                                                      | True if you want base64                         |
-| ssl          | NO       | False                | True / False                                                                      | True if you want ssl                            |
-| cache        | NO       | True                 | True / False                                                                      | True if you want to use the cache with this TTS |
+| Parametro    |Necessario| Default              | Valori possibili                                                                | Commento                                                 |
+| ------------ | -------- | -------------------- | ------------------------------------------------------------------------------- | -------------------------------------------------------- |
+| language     | SI       |                      | [26 llingue](http://www.voicerss.org/api/documentation.aspx), esempio : "fr-fr" | Le lingue sono identificate dalla stringa LCID           |
+| key          | SI       |                      |                                                                                 | registrati nel sito web ufficiale per ottenere la key API|
+| rate         | NO       | 0                    | qualunque intero "int"                                                          | Frequenza audio                                          |
+| codec        | NO       | 'MP3'                | 'MP3', 'WAV', 'AAC', 'OGG', 'CAF'                                               | Codec audio                                              |
+| audio_format | NO       | '44khz_16bit_stereo' | [51 scelte](http://www.voicerss.org/api/documentation.aspx), '8khz_8bit_mono'   | Formati audio                                            |
+| ssml         | NO       | False                | True / False                                                                    | True se si desidera usare ssml (solo a pagamento)        |
+| base64       | NO       | False                | True / False                                                                    | True se si desidera usare  base64                        |
+| ssl          | NO       | False                | True / False                                                                    | True se si desidera usare  ssl                           |
+| cache        | NO       | True                 | True / False                                                                    | True se si desidera utilizzare la cache con questo TTS   |
 
-## Settings example
+## Esempio d'impostazioni
 
 ```yaml
 default_text_to_speech: "voicerss"
@@ -25,9 +25,9 @@ text_to_speech:
         key: "API_Key"
 ```
 
-## Notes
+## Note
 
-limitations : 100KB per request
+limitazioni: 100 KB per richiesta
 
-The Free edition is limited to 350 daily requests.
-Possibility to [upgrade the plan](http://www.voicerss.org/personel/upgrade.aspx).
+L'edizione gratuita è limitata a 350 richieste giornaliere.
+Possibilità di [aggiornare il piano](http://www.voicerss.org/personel/upgrade.aspx).

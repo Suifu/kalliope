@@ -1,61 +1,61 @@
 
-### Method 1 - User install using the PIP package
+### Metodo 1 - Installare usando il package per PIP 
 
-You can install kalliope on your system by using Pypi:
+Tu puoi installare kalliope nel tuo sistema usando PIP:
 ```bash
 sudo pip install kalliope
 ```
 
-### Method 2 - Manual setup using sources
+### Metodd 2 - Installazione manuale usando i sorgenti
 
-Clone the project:
+Clonare il progetto:
 ```bash
 git clone https://github.com/kalliope-project/kalliope.git
 cd kalliope
 ```
 
-Install the project:
+Installare il progetto:
 ```bash
 sudo python setup.py install
 ```
 
-### Method 3 - Developer install using Virtualenv
+### Metodo 3 - Per sviluppatori, Installazione usando Virtualenv
 
-Install the `python-virtualenv` package:
+Installare il pacchetto `python-virtualenv`:
 ```bash
 sudo apt-get install python-virtualenv
 ```
 
-Clone the project:
+Clonare il progetto:
 ```bash
 git clone https://github.com/kalliope-project/kalliope.git
 cd kalliope
 ```
 
-Generate a local python environment:
+Generare un environment locale per python :
 ```bash
 virtualenv venv
 ```
 
-Install the project using the local environment:
+Installare il progetto usando l'environment appena creato:
 ```bash
 venv/bin/pip install --editable .
 ```
 
-Activate the local environment:
+Attivare l'environment locale:
 ```bash
 source venv/bin/activate
 ```
 
-### Method 4 - Developer, dependencies install only
+### Metodo 4 - Per sviluppatori, installare solo le dipendenze
 
-Clone the project:
+Clonare il progetto:
 ```bash
 git clone https://github.com/kalliope-project/kalliope.git
 cd kalliope
 ```
 
-Install the python dependencies directly:
+Installare direttamente le dependenze python:
 ```bash
 sudo pip install -r install/files/python_requirements.txt
 ```

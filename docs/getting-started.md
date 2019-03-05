@@ -1,17 +1,16 @@
-# Getting started with Kalliope
+# Iniziare con Kalliope
 
-Kalliope needs two files to works, a `settings.yml` and a `brain.yml`.
-As files are written on YAML syntax, we strongly recommend you to use an editor(IDE) like [VS Code](https://code.visualstudio.com/) or [Atom](https://atom.io/).
+Kalliope ha bisogno di due file per funzionare, un settings.yml e un brain.yml. Poiché i file sono scritti con sintassi YAML, ti consigliamo vivamente di utilizzare un editor (IDE) come  [VS Code](https://code.visualstudio.com/) o [Atom](https://atom.io/).
 
-If you are using kalliope from a Rpi, the idea would be to configure your assistant from your main computer with an IDE and then push your config folder into your Rpi.
+Se stai usando kalliope da un Rpi, l'idea sarebbe quella di configurare il tuo assistente dal tuo computer con un IDE e poi inviare la configurazione al tuo RPI.
 
-When you start kalliope using the CLI (`kalliope start`), the program will try to load your `settings.yml` and `brain.yml` in the following order:
+Quando avvii kalliope usando la CLI (`kalliope start`), il programma proverà a caricare settings.yml e brain.yml nel seguente ordine:
 
-- From your current folder, E.g `/home/pi/my_kalliope/`
-- From `/etc/kalliope/`
-- From the default `settings.yml` and `brain.yml` which are located in the root of the Kalliope project tree.
+- Dalla tua cartella corrente, Es `/home/pi/my_kalliope/`
+- Da `/etc/kalliope/`
+- Dal `settings.yml` e `brain.yml` di default che si trovano nel root del progetto Kalliope.
 
-This is a common tree of a Kalliope configuration folder:
+Questo è l'albero di default della cartella di configurazione di Kalliope:
 ```
 kalliope_config/
 ├── brains
@@ -22,20 +21,20 @@ kalliope_config/
 └── settings.yml
 ```
 
-We made starter kits that only needs to be cloned, placed into the Rpi and launched. You'll find the whole list of available start kits on the [Kalliope's website](https://kalliope-project.github.io/starter_kit.html).
-Those repositories provide you a structure to start playing and learning basics of Kalliope.
-Download the starter kit of your choice and open the folder with your IDE.
+Abbiamo creato uno starter kits che deve solo essere clonato, inserito nell'RPI e lanciato. Troverai l'intero elenco di start kits disponibili sul [sito web di Kalliope](https://kalliope-project.github.io/starter_kit.html).
+Questi repository forniscono una struttura per iniziare a imparare le basi di Kalliope.
+Scarica il kit di partenza a tua scelta e apri la cartella con il tuo IDE.
 
-All files are expressed in YAML format (see [YAML Syntax](https://learnxinyminutes.com/docs/yaml/)) and has a minimum of syntax, which intentionally tries to not be a programming language or script,
-but rather a model of a configuration or a process.
+Tutti i file sono espressi in formato YAML (vedi [Sintassi YAML](https://learnxinyminutes.com/docs/yaml/)) e hanno un minimo di sintassi, che tenta intenzionalmente di non essere un linguaggio o uno script di programmazione,
+ma piuttosto un modello di una configurazione o di un processo.
 
-Let's open the main brain file of the English starter kit. You'll see there are some included sub brains file.
+Apriamo il file principale dello starter kit Italiano. Vedrai che ci sono alcuni file di sub brains inclusi.
 ```yaml
 - includes:
     - brains/say.yml
 ```
 
-If you open the `say.yml` file from the brains folder, you'll see a basic **synapse** that uses the [neuron](brain/brain.md#neurons) "[Say](brain/neurons/say)" and make Kalliope speaks out loud "Hello sir" when you say "hello".
+Se apri il file `say.yml` dalla cartella brains, vedrai una **synapse** di base che usa il [neuron](brain/brain.md#neurons) "[Say](brain/neurons/say)" e fa parlare Kalliope ad alta voce "Ciao signore" quando dici "hello".
 ```yaml
 - name: "say-hello-en"
   signals:
@@ -45,32 +44,32 @@ If you open the `say.yml` file from the brains folder, you'll see a basic **syna
         message: "Hello sir"
 ```
 
-Let's break this down in sections so we can understand how the file is built and what each part means.
+Dividiamo il tutto in sezioni in modo che possiamo capire come viene costruito il file e cosa significa ogni parte.
 
-Items that begin with a ```-``` are considered as list items. Items have the format of ```key: value``` where value can be a simple string or a sequence of other items.
+I pezzi che iniziano con ```-``` sono considerati come elementi di questo elenco. I pezzi hanno il formato ```key: value``` il cui il valore può essere una semplice stringa o una sequenza di altri sotto elementi.
 
-At the top level we have a "name" tag. This is the **unique identifier** of the synapse. It must be an unique word with the only accepted values : alphanumerics and dash. ([a - zA - Z0 - 9\-])
+Al livello più alto abbiamo un tag "name". Questo è **l'identificatore univoco** della sinapsi. Deve essere univoca e accetta unicamente i caratteri alfanumerici e trattino. ([a - zA - Z0 - 9\-])
 ```yaml
 - name: "Say-hello"
 ```
 
-The first part, called **signals** is a list of input actions.
-You can add as many signal as you want in the "signals" section. If one of them is triggered, the neuron list will be executed.
+La prima parte, denominata **signals** è una lista di azioni di input.
+Puoi aggiungere quante azioni vuoi nella sezione "signals". Se uno di questi viene attivato, la lista dei neuroni verrà eseguita.
 ```yaml
 signals:
   - order: "say-hello"
 ```
 
-In the following example, we use just one signal, an "order", but it an can be:
+Nell'esempio seguente, usiamo solo una azione, un "order", ma può anche essere:
 
-- **an order:** Something that has been spoke out loud by the user.
-- **an event:** A date or a frequency (E.G: repeat each morning at 8:30)
-- **a mqtt message** A message received on a MQTT topic
-- **a geolocation** From the position of your smartphone
-- **a community signal** E.g: GPIO signal allow you to trigger actions from a button
-- **No signal**. Then the synapse can be only called from another synapse or by the API
+- **an order:** Qualcosa che è stato pronunciato ad alta voce dall'utente.
+- **an event:** Una data o una azione ripetuta (EG: ripetere ogni mattina alle 8:30)
+- **a mqtt message** Un messaggio ricevuto su un argomento MQTT
+- **a geolocation** Dalla posizione del tuo smartphone
+- **a community signal** Es: Usando una GPIO consente di attivare azioni da un pulsante
+- **No signal**. La sinapsi può essere chiamata solo da un'altra sinapsi o dall'API
 
-Then we have the **neurons** declaration. Neurons are modules that will be executed when the input action(signal) is triggered. You can define as many neurons as you want to the same input action (for example: say something, then do something etc...). This declaration contains a list (because it starts with a "-") of neurons
+Vediamo ora le dichiarazioni dei **neurons**. I neuroni sono moduli che verranno eseguiti quando l'azione di input(signal) viene attivata. È possibile definire quanti neuroni si desidera per la stessa azione di input (ad esempio: dire qualcosa, quindi fare qualcosa ecc ...). Questa contiene un elenco (perché inizia con un "-") di neurons
 ```yaml
 neurons:
   - neuron_1_name
@@ -78,29 +77,29 @@ neurons:
   - another_neuron
 ```
 
-The order of execution of neurons is defined by the order in which they are listed in neurons declaration.
+L'ordine di esecuzione dei neuroni è definito dall'ordine in cui sono elencati nella dichiarazione dei neurons.
 
-Some neurons need parameters that can be passed as arguments following the syntax bellow:
+Alcuni neuroni hanno bisogno di parametri che possono essere passati come argomenti seguendo la seguente sintassi:
 ```yaml
 neurons:
   - neuron_name:
       parameter1: "value1"
       parameter2: "value2"
 ```
-Note here that parameters are indented with one tabulation bellow the neuron's name (YAML syntax requirement).
+Nota che i parametri necessitano di una tabulazione sotto il nome del neurone (requisito di sintassi YAML).
 
-In this example, the neuron called "say" will make Kalliope speak out loud the sentence in parameter **message**.
+In questo esempio, il neurone chiamato "say" farà sì che Kalliope pronunci ad alta voce la frase nel parametro **message**.
 
-Neurons can be Core (installed by default) or community based (need to be installed).
+I neuroni possono essere Core (installati di default) o community based (devono essere installati).
 
-Time to start Kalliope. Move into the folder and then start Kalliope:
+È ora di avviare Kalliope. Spostati nella cartella e avvia Kalliope:
 ```bash
 cd /path/to/the/starter_kit
 kalliope start
 ```
-> **Note:** Do not start Kalliope as root user or with sudo
+> **Nota:** Non avviare Kalliope come utente root o con sudo
 
-Kalliope will load settings and brain, the output should looks the following
+Kalliope caricherà le settings e il brain, l'output dovrebbe apparire come segue
 ```bash
 Starting event manager
 Events loaded
@@ -110,13 +109,13 @@ Starting REST API Listening port: 5000
 Waiting for trigger detection
 ```
 
-Then speak the hotwork out loud to wake up Kalliope (with the right pronunciation depending on your starter kit. "Kalliopé" in french, "Kalliopee" in English, etc..).
-If the trigger is successfully raised, you'll see "say something" into the console.
+Ora pronuncia l'hotwork ad alta voce e vedrai che Kalliope (con la pronuncia corretta a seconda del tuo starter kit. "Kalliopé" in Francese, "Kalliopee" in Inglese, etc..).
+Se pronunciato correttamente, vedrai "say something" nella console.
 ```bash
 Say something!
 ```
 
-Then you can say "hello" and listen the Kalliope response.
+Quindi potrai dire "hello" e ascoltare la risposta di Kalliope.
 ```bash
 Say something!
 Google Speech Recognition thinks you said hello
@@ -124,4 +123,4 @@ Order matched in the brain. Running synapse "say-hello"
 Waiting for trigger detection
 ```
 
-That's it! You are ready to customize your assistant!
+Questo è tutto! Sei pronto per personalizzare il tuo assistente!

@@ -1,48 +1,48 @@
-# Kalliope requirements for Raspbian
+# Prerequisiti di Kalliope per Raspbian
 
-Kalliope can be installed:
+Kalliope puo essere installato:
 
-- [Via the pre-compiled disk image](#install-via-the-pre-compiled-disk-image)
-- [Via script](#install-via-script)
-- [Manually](#manual-installation)
+- [Via immagine pre-compilata](#installa-tramite-limmagine-del-disco-pre-compilata)
+- [Via script](#installa-tramite-script)
+- [Manualmente](#installa-manualmente)
 
 
-## Install via the pre-compiled disk image
+## Installa tramite l'immagine del disco pre-compilata
 
-Download the last image [from the release page](https://github.com/kalliope-project/kalliope/releases) of Kalliope and load it as usual onto an SD card.
+Scarica l'ultima immagine [dalla pagina di rilascio](https://github.com/kalliope-project/kalliope/releases) di Kalliope e caricala come al solito su una scheda SD.
 
 - **Login:** pi
 - **Password:** raspberry
 
-Once installed, use the `raspi-config` command to expand the file system and fill the available space on the SD card.
-The SSH server is enable by default. Get the IP of your Rpi via the command `ip a` and then connect via your favourite SSH client.
+Una volta avviato, usare il comando `raspi-config` per espandere il file system e riempire lo spazio disponibile sulla scheda SD.
+Il server SSH è abilitato di default. Ottieni l'IP con il comando `ip a` e quindi connettiti tramite il tuo client SSH preferito.
 
-You'll find a couple folders named "starter_kit_<language>" located in `/home/pi`. Those folders are basic configuration that will help you to start with Kalliope.
+Troverai alcune cartelle denominate "starter_kit_<language>" situate in `/home/pi`. Queste cartelle sono la configurazione di base che ti aiuterà a iniziare con Kalliope.
 
 
-## Install via script
+## Installa tramite script
 
-Just run the following bash command to install Kalliope on a freshly installed Raspberry Pi:
+Basta eseguire il seguente comando bash per installare Kalliope su un Raspberry Pi:
 ```
 bash -c "$(curl -sL https://raw.githubusercontent.com/kalliope-project/kalliope/master/install/rpi_install_kalliope.sh)"
 ```
 
-## Manual installation
+## Installa manualmente
 
-> **Note:** It is recommended to use a **lite** installation of Raspbian without any graphical interface for a better experience.
+> **Nota:** Si raccomanda di utilizzare un'installazione **lite** di Raspbian senza alcuna interfaccia grafica per un'esperienza migliore.
 
-> **Note:** The first Raspberry Pi is not officially supported. The installation will works but a single core with only 700Mhz may produce latency.
+> **Nota:** Il primo Raspberry Pi non è ufficialmente supportato. L'installazione funzionerà ma un singolo core con soli 700Mhz questo potrebbe produrre latenza.
 
-### Debian packages requirements
+### Pacchetti necessari in Debian
 
-Install the required system libraries and software:
+Installa le librerie di sistema e i softwares necessari:
 
 ```bash
 sudo apt-get update
 sudo apt-get install git python-dev libsmpeg0 libttspico-utils libsmpeg0 flac libffi-dev libffi-dev libssl-dev portaudio19-dev build-essential libssl-dev libffi-dev sox libatlas3-base mplayer libyaml-dev libpython2.7-dev libav-tools libjpeg-dev
 ```
 
-Install the last release of python-pip:
+Installare python-pip:
 ```bash
 wget https://bootstrap.pypa.io/get-pip.py
 sudo python get-pip.py
@@ -50,18 +50,18 @@ sudo python get-pip.py
 
 {!installation/manual_installation_common.md!}
 
-## Raspberry Pi configuration
+## Configurazione Raspberry Pi
 
-This section deals with the special configuration needed to get kalliope working on a RPi.
+Questa sezione tratta della configurazione necessaria per far funzionare kalliope su un RPi.
 
-### Microphone configuration
+### Configurazione del microfono
 
-Get the output card:
+Ottieni info sull'output con:
 ```bash
 aplay -l
 ```
 
-Output example with a USB headset connected:
+Esempio di output con una cuffia USB collegata:
 ```bash
 **** List of PLAYBACK Hardware Devices ****
 card 0: ALSA [bcm2835 ALSA], device 0: bcm2835 ALSA [bcm2835 ALSA]
@@ -82,18 +82,18 @@ card 1: Headset [Logitech USB Headset], device 0: USB Audio [USB Audio]
   Subdevice #0: subdevice #0
 ```
 
-Here we see that:
+Qui vediamo che:
 
-- the analog audio (where the jack is connected) on card 0 and device 1
-- usb audio on card 1 and device 1
+- l'audio analogico (dove è collegato il jack) è su card 0 e device 1
+- l'audio USB è su card 1 e device 1
 
 
-Get the input (microphone card):
+Ottenere info sull'input (microfono):
 ```bash
 arecord -l
 ```
 
-Output example with a USB headset connected:
+Esempio di output con una cuffia USB collegata:
 ```bash
 **** List of CAPTURE Hardware Devices ****
 card 1: Headset [Logitech USB Headset], device 0: USB Audio [USB Audio]
@@ -101,14 +101,14 @@ card 1: Headset [Logitech USB Headset], device 0: USB Audio [USB Audio]
   Subdevice #0: subdevice #0
 ```
 
-Here one shall see one peripheral on card 1 and device 0
+Qui vediamo vede una periferica su card 1 e device 0
 
-Create a configuration file that applies the following configuration:
+Creiamo quindi un file di configurazione che applichi la seguente configurazione:
 
-- output audio (what Kalliope says) on the analog audio (via speakers connected to the jack)
-- input audio (what is said to Kalliope) on the USB microphone
+- uscita audio (voce di Kalliope) sull'audio analogico (tramite altoparlanti collegati al jack)
+- input audio (ciò che viene detto a Kalliope) sul microfono USB
 
-Create a file in `/home/pi/.asoundrc` with the content below
+Creiamo un file in `/home/pi/.asoundrc` con il contenuto sottostante
 ```
 pcm.!default {
    type asym
@@ -123,60 +123,61 @@ pcm.!default {
 }
 ```
 
-Where `playback.pcm` is the output audio and the `capture.pcm` is the input audio.
+Dove `playback.pcm` è l'audio in uscita e `capture.pcm` è l'audio in ingresso.
 
-Restart alsa to apply changes:
+Riavvia ALSA per applicare le modifiche:
 ```bash
 sudo /etc/init.d/alsa-utils restart
 ```
 
-Adjust the microphone sensibility by running alsamixer:
+Regola la sensibilità del microfono eseguendo alsamixer:
 ```bash
 alsamixer
 ```
 
-Select the microphone device by pressing F6 and move up the `mic` sensibility level:
+Seleziona il microfono premendo F6 e regola il livello di sensibilità del `mic`:
 ![logo](../images/alsamixer_mic_level.png)
 
-### HDMI / Analog audio
+### HDMI / Audio analogico
 
-By default, the audio stream will use HDMI if something is plugged into this port.
-Check the [official documentation](https://www.raspberrypi.org/documentation/configuration/audio-config.md) to switch from HDMI to analog.
+Per impostazione predefinita, se qualcosa è collegato a questa porta, il flusso audio utilizzerà HDMI.
+Controlla la [documentazione ufficiale](https://www.raspberrypi.org/documentation/configuration/audio-config.md) per passare da HDMI ad analogico.
 
 ```bash
 sudo raspi-config
 ```
 
-### Configure your locales
+### Configura le tue impostazioni locales (lingua)
 
-Locales defines language and country specific setting for your programs and shell session. 
-To set system’s locale you need use shell variable. For example, LANG variable can be used to set en_US (English US) language. 
+Le impostazioni locales definiscono impostazioni specifiche per lingua e paese per i tuoi programmi e la sessione di shell. 
+Per impostare le impostazioni internazionali del sistema è necessario utilizzare la variabile di shell. Ad esempio, la variabile LANG può essere utilizzata per impostare la lingua it_IT (italiano). 
 
-Check current locales:
+Controlla le impostazioni locales in uso:
 ```
 locale
 ```
 
-To update your locale, type the command bellow:
+Per aggiornare le impostazioni internazionali, digitare il comando seguente:
 ```
 sudo dpkg-reconfigure locales
 ```
 
-Select in the list the locales of your country, by selecting the code with UTF8, example:
+Seleziona nell'elenco il locales del tuo paese, selezionando il codice con UTF8, esempio:
 
 - de_DE.utf8
+- it_IT.utf8
 - en_GB.utf8
 - fr_FR.utf8
 - es_ES.utf8
 
-Then, update your `/home/pi/.bashrc` file by exporting the language. Example:
+Quindi, aggiorna il tuo file `/home/pi/.bashrc` esportando la lingua. Esempio:
 ```
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
 export LANGUAGE="en_US.UTF-8"
 ```
 
-Source the file to handle changes
+Esegui source per applicare le modifiche
 ```
 source /home/pi/.bashrc
 ```

@@ -103,7 +103,7 @@ signals:
             output: "replacing words"
 ```
 
-E.g
+Es
 ```yaml
 - name: "stt-correction-test"
     signals:
@@ -121,7 +121,7 @@ In this example, if you pronounce "this is my test", the word test will be trans
 This feature can be useful when working with numbers.
 For example, you know that your STT engine return all number as string and you need them as integer for your neurons.
 
-E.g:
+Es:
 ```yaml
 - name: "mm-say"
     signals:
@@ -149,7 +149,7 @@ signals:
         stt-correction-file: "<path to yaml file>"
 ```
 
-E.g
+Es
 ```yaml
 - name: "stt-correction-test"
     signals:

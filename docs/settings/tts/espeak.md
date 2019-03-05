@@ -1,35 +1,35 @@
-This TTS is based on the [eSpeak engine](http://espeak.sourceforge.net/).
+Questo TTS è basato sull'[engine eSpeak](http://espeak.sourceforge.net/).
 
-## Input parameters
+## Parametri d'input
 
-| Parameters | Required | Default         | Choices                | Comment                                                   |
-| ---------- | -------- | --------------- | ---------------------- | --------------------------------------------------------- |
-| voice      | yes      |                 | all voice installed    | see the full list with command "espeak --voices=LANGUAGE" |
-| variant    | no       |                 | all language installed | see the full list with command "espeak --voices=variant"  |
-| speed      | no       | 160             | 80 to 450              | Speed in words per minute                                 |
-| amplitude  | no       | 100             | 0 to 200               | Amplitude                                                 |
-| pitch      | no       | 50              | 0 to 99                | Pitch adjustment                                          |
-| path       | no       | /usr/bin/espeak | 0 to 99                | Path of espeak                                            |
-| cache      | no       | TRUE            |                        | True if you want to use the cache with this TTS           |
+| Parametro  |Necessario| Default         | Valori possibili         | Commento                                                           |
+| ---------- | -------- | --------------- | ------------------------ | ------------------------------------------------------------------ |
+| voice      | si       |                 | tutte le voci installate | guarda l'elenco completo con il comando "espeak --voices=LANGUAGE" |
+| variant    | no       |                 |tutte le lingue installate| guarda l'elenco completo con il comando "espeak --voices=variant"  |
+| speed      | no       | 160             | 80 to 450                | Velocità in parole per minuto                                      |
+| amplitude  | no       | 100             |  0 to 200                | Ampiezza                                                           |
+| pitch      | no       | 50              |  0 to  99                | Regolazione del pitc                                               |
+| path       | no       | /usr/bin/espeak |  0 to  99                | Percorso di espeak                                                 |
+| cache      | no       | TRUE            |                          | True se si desidera utilizzare la cache con questo TTS             |
 
-## Installation
+## Installazione
 
-Espeak package need to be installed
+Espeak deve essere installato con:
 ```bash
 sudo apt-get install espeak
 ```
 
-To see the full list of language and voices:
+Per vedere l'elenco completo di lingue e voci:
 ```bash
 espeak --voices
 ```
 
-To see the full list of voices:
+Per vedere l'elenco completo delle voci:
 ```bash
 espeak --voices=LANGUAGE
 ```
 
-Example:
+Esempio:
 ```
 espeak --voices=fr
 Pty Language Age/Gender VoiceName          File          Other Languages
@@ -39,17 +39,17 @@ Pty Language Age/Gender VoiceName          File          Other Languages
  5  fr-be          M  french-Belgium       europe/fr-be  (fr 8)
 ```
 
-Configuration for "7  fr             M  french-mbrola-1      mb/mb-fr1"
+Configurazione per "7  fr             M  french-mbrola-1      mb/mb-fr1"
 ```yaml
 voice: "mb-fr1"
 ```
 
-To see the full list of variant:
+Per vedere l'elenco completo delle varianti:
 ```bash
 espeak --voices=variant
 ```
 
-Example:
+Esempio:
 ```
 espeak --voices=variant
 Pty Language Age/Gender VoiceName          File          Other Languages
@@ -63,13 +63,13 @@ Pty Language Age/Gender VoiceName          File          Other Languages
  [...]
 ```
 
-Configuration for "5  variant        F  female3              !v/f3".
+Configurazione per "5  variant        F  female3              !v/f3".
 ```yaml
 voice: "fr"
 variant: "f3"
 ```
 
-## Settings example
+## Esempio d'impostazioni
 
 ```yaml
 default_text_to_speech: "espeak"

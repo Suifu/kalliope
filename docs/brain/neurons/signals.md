@@ -26,7 +26,7 @@ Syntax:
           key2: "value2"
 ```
 
-E.g:
+Es:
 ```yaml
 - name: "start-skip-trigger"
   signals: {}

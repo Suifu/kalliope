@@ -1,13 +1,13 @@
-This Player is based on the [sounddevice and soundfile engines](https://pypi.python.org/pypi/sounddevice)
+Questo lettore è basato sull'[engines sounddevice e soundfile](https://pypi.python.org/pypi/sounddevice)
 
-## Input parameters
+## Parametri d'input
 
-| parameter      | required  | default   | choices     | comment                                                         |
-|----------------|-----------|-----------|-------------|-----------------------------------------------------------------|
-| convert_to_wav | no        | TRUE      | True, False | Convert the generated file from the TTS into wav before reading |
+| Parametro      |Necessario| Default |Valori possibili| Commento                                                  |
+|----------------|----------|---------|----------------|-----------------------------------------------------------|
+| convert_to_wav | no       | TRUE    | True, False    | Converti il ​​file generato dal TTS in wav prima di leggere |
 
 
-## Settings example
+## Esempio d'impostazioni
 
 ```yaml
 default_player: "sounddeviceplayer"
@@ -17,7 +17,7 @@ players:
      convert_to_wav: True
 ```
 
-## Notes
+## Note
 
->**Note:** This Player does not handle mp3 format, converting mp3 to wav might be required.
+>**Nota:** Questo lettore non gestisce il formato mp3, è richiesta la conversione da mp3 in wav.
 

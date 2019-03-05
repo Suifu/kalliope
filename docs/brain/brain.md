@@ -4,7 +4,7 @@ The brain is a main component of Kalliope. It's a module that gives a configurat
 
 Kalliope will look for the brain in the order bellow:
 
-- From you current folder, E.g `/home/pi/my_kalliope/brain.yml`
+- From you current folder, Es `/home/pi/my_kalliope/brain.yml`
 - From `/etc/kalliope/brain.yml`
 - From the default `brain.yml` located in the root of the project tree.
 
@@ -53,7 +53,7 @@ signals: []
 Some signals will send a list of parameters to all neurons when triggered. Neurons are then free to use them or not.
 For example, the signal mqtt_subscriber(signals/mqtt_subscriber.md) send a variable called "mqtt_subscriber_message" when triggered. In the example bellow, the neuron "say" use this variable to make Kalliope speak out loud a status received from the MQTT broker.
 
-E.g
+Es
 ```yaml
 - name: "mqtt"
   signals:
@@ -151,7 +151,7 @@ Here, the spoken value captured by the TTS engine will be passed as an argument 
 
 Example, with the synapse declaration above, if you say "say hello to Bob". The parameter message is instantiated and all `{{ name }}` are replaced by "bob".
 
-From parameters sent by a signal(E.g, mqtt subscriber)
+From parameters sent by a signal(Es, mqtt subscriber)
 ```yaml
 - name: "mqtt"
   signals:
@@ -437,7 +437,7 @@ To do that, use the import statement in the entry brain.yml file with the follow
       - path/to/another_sub_brain.yml
 ```
 
-E.g:
+Es
 ```yaml
   - includes:
       - brains/rolling_shutter_commands.yml

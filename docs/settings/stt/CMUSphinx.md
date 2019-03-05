@@ -1,28 +1,28 @@
-This module is based on the self hosted STT solution [CMUSPhinx engine](http://cmusphinx.sourceforge.net/wiki/).
-By default, only english language is available. You can download [another language model](https://sourceforge.net/projects/cmusphinx/files/Acoustic%20and%20Language%20Models/) from the main repository and install it following [the official documentation](http://cmusphinx.sourceforge.net/wiki/tutoriallm).
+Questo modulo è una soluzione STT auto-ospitata (offline) basata sull'[engine CMUSPhinx](http://cmusphinx.sourceforge.net/wiki/).
+Di base, è disponibile solo la lingua inglese. È possibile scaricare [altre lingue](https://sourceforge.net/projects/cmusphinx/files/Acoustic%20and%20Language%20Models/) dal repository principale e installarle seguendo [la documentazione ufficiale](http://cmusphinx.sourceforge.net/wiki/tutoriallm).
 
-## Installation
+## Installazione
 
-Install packages
+Installa i pacchetti
 ```bash
 sudo apt-get install swig libpulse-dev
 ```
 
-Then install the python lib
+Quindi installa la lib per python
 ```bash
 sudo pip install pocketsphinx
 ```
 
-## Input parameters
+## Parametri d'input
 
-| parameter       | required | type   | default | choices | comment                                                                                                                                                |
-| --------------- | -------- | ------ | ------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| language        | no       | string | en-US   |         | [Installing other languages](https://github.com/Uberi/speech_recognition/blob/master/reference/pocketsphinx.rst#installing-other-languages)            |
-| keyword_entries | no       | list   |         |         | List of tuples of the form (keyword, sensitivity), where keyword is a phrase, and sensitivity is how sensitive to this phrase the recognizer should be |
-| grammar_file    | no       | string |         |         | FSG or JSGF grammars file path. Note: If `keyword_entries` are passed, `grammar_file` will be ignored                                                  |
+| Parametro       |Necessario|  Tipo   | Default |Valori possibili| Commento                                                                                                                                      |
+| --------------- | -------- | ------- | ------- |----------------| --------------------------------------------------------------------------------------------------------------------------------------------- |
+| language        | no       | stringa | en-US   |                | [Installare altre lingue](https://github.com/Uberi/speech_recognition/blob/master/reference/pocketsphinx.rst#installing-other-languages)      |
+| keyword_entries | no       | elenco  |         |                | Elenco di tuple nella forma (keyword, sensitivity), dove keyword è una frase e sensitivity è la sensibilità al riconoscimento di questa frase |
+| grammar_file    | no       | stringa |         |                | Percorso file grammaticali FSG o JSGF. Nota: se vengono passati `keyword_entries`, `grammar_file` verrà ignorato                              |
 
 
-## Settings example
+## Esempio d'impostazioni
 
 ```yaml
 default_speech_to_text: "cmusphinx"
@@ -32,11 +32,11 @@ speech_to_text:
       language: "en-US"
 ```
 
-## Using keywords
+## Usare le parole chiave
 
-Sphinx usually operates in 'transcription mode' and will return whatever words it recognizes.
-Adding `keyword_entries` to the settings narrows down its search space and is more accurate than just looking for those same keywords in non-keyword-based transcriptions, because Sphinx knows specifically what sounds to look for.
-The parameter `keyword_entries` expects a list of tuples consisting of a phrase and a sensitivity level defining how sensitive to this phrase the recognizer should be, on a scale from 0 (very insensitive, more false negatives) to 1 (very sensitive, more false positives).
+Sphinx di solito opera in 'transcription mode' e restituirà tutte le parole che riconosce.
+L'aggiunta di `keyword_entries` alle impostazioni restringe il suo spazio di ricerca ed è più accurata della semplice ricerca di quelle stesse parole chiave nelle trascrizioni non basate su parole chiave, perché Sphinx sa esattamente quali suoni cercare.
+Il parametro `keyword_entries` prevede un elenco di tuple composto da una frase e un livello di sensibilità che definiscono la sensibilità di questa frase al riconoscitore, su una scala da 0 (molto insensibile, più falsi negativi) a 1 (molto sensibile, più falsi positivi).
 ```yaml
 default_speech_to_text: "cmusphinx"
 

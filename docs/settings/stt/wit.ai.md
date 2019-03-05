@@ -1,12 +1,12 @@
-The wit STT is based on the [Wit.ai API](https://wit.ai/)
+La wit STT è basata sull'[API Wit.ai](https://wit.ai/)
 
-## Input parameters
+## Parametri d'input
 
-| parameter | required  | default | choices                                    | comment   |
-|:---------:|-----------|---------|--------------------------------------------|-----------|
-| key       | Yes       | None    |                                            | User info |
+| Parametro |Necessario| Default |Valori possibili| Commento          |
+|:---------:|----------|---------|----------------|-------------------|
+| key       | Yes      | None    |                |Informazioni utente|
 
-## Settings example
+## Esempio d'impostazioni
 
 ```yaml
 default_speech_to_text: "wit"

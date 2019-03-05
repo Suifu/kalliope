@@ -1,28 +1,28 @@
 ## Test your env
 
-### Check your microphone and speaker config
+### Controlla il microfono e la configurazione degli speaker
 
-To ensure that you can record your voice, run the following command to capture audio input from your microphone:
+Per assicurarti di poter registrare la tua voce, esegui il seguente comando per catturare l'input audio dal tuo microfono:
 ```bash
 rec test.wav
 ```
 
-Press CTRL-C after capturing a sample of your voice.
+Premi CTRL-C dopo aver catturato un campione della tua voce.
 
-Then play the recorded audio file
+Quindi riproduci il file audio registrato
 ```bash
 mplayer test.wav
 ```
 
-Your installation is now complete, let's take a look now to the [getting started documentation](../getting-started.md) to learn how to use Kalliope.
+La tua installazione è ora completa, diamo ora un'occhiata alla [documentazione introduttiva](../getting-started.md) per imparare come usare Kalliope.
 
-### (Optional) Start Kalliope automatically after a reboot
+### (Optional) Avviare Kalliope automaticamente dopo un riavvio
 
-If you want to start Kalliope automatically Place the script bellow in `/etc/systemd/system/kalliope.service`.
+Se si vuole avviare automaticamente Kalliope all'avvio poni il seguente script in `/etc/systemd/system/kalliope.service`.
 
-Update the path `<my_config_path>` with the path where you've placed your `brain.yml` and `settings.yml`.
+Aggiorna il percorso `<my_config_path>` con il percorso in cui hai inserito i file `brain.yml` e `settings.yml`.
 
-Update the `<username>` with a non root user. For example, on Raspbian you can set `pi`.
+Aggiorna `<username>` con il nome di un utente non root. Ad esempio, su Raspbian puoi impostare `pi`.
 
 ```bash
 [Unit]
@@ -40,7 +40,7 @@ User=<username>
 WantedBy=multi-user.target
 ```
 
-E.g
+Es
 ```bash
 [Unit]
 Description=Kalliope
@@ -57,7 +57,7 @@ User=pi
 WantedBy=multi-user.target
 ```
 
-Then, reload systemctl, start the service and enable it at startup
+Quindi, ricarica systemctl, avvia il servizio creato e abilitalo all'avvio
 ```bash
 sudo systemctl daemon-reload
 sudo systemctl start kalliope

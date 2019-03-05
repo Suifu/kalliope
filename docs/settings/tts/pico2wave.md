@@ -1,15 +1,15 @@
-This TTS is based on the SVOX picoTTS engine
+Questo TTS è basato sull'engine SVOX picoTTS
 
-## Input parameters
+## Parametri d'input
 
-| Parameters | Required | Default            | Choices      | Comment                                                                                                                                  |
-| ---------- | -------- | ------------------ | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| language   | yes      |                    | 6 languages  | List of supported languages in the Note section                                                                                          |
-| cache      | no       | TRUE               | True,  False | True if you want to use the cache with this TTS                                                                                          |
-| samplerate | no       |                    | int          | Pico2wave creates 16 khz files but not all USB devices support this. Set a value to convert to a specific samplerate. For Example: 44100 |
-| path       | no       | /usr/bin/pico2wave |              | Path to the Pico2wave binary. If not set, Kalliope will try to load it from the environment                                              | convert to a specific samplerate. For Example: 44100 |
+| Parametro  |Necessario| Default            |Valori possibili| Commento                                                                                                                                                        |
+| ---------- | -------- | ------------------ | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| language   | si       |                    | 6 lingue       | Elenco delle lingue supportate nella sezione Note                                                                                                               |
+| cache      | no       | TRUE               | True,  False   | True se si desidera utilizzare la cache con questo TTS                                                                                                          |
+| samplerate | no       |                    | int            | Pico2wave crea file da 16 khz ma non tutti i dispositivi USB supportano questo. Impostare un valore da convertire in un samplerate specifico. Ad esempio: 44100 |
+| path       | no       | /usr/bin/pico2wave |                | Percorso di Pico2wave. Se non impostato, Kalliope proverà a caricarlo dall'environment                                                                          |
 
-## Settings example
+## Esempio d'impostazioni
 
 ```yaml
 default_text_to_speech: "pico2wave"
@@ -20,13 +20,13 @@ text_to_speech:
         cache: True
 ```
 
-## Notes
+## Note
 
-Supported languages :
+Lingue supportate:
 
-- English en-US
-- English en-GB
-- French fr-FR
-- Spanish es-ES
-- German de-DE
-- Italian it-IT
+- Inglese en-US
+- Inglese en-GB
+- Francese fr-FR
+- Spagnolo es-ES
+- Tedesco de-DE
+- Italiano it-IT

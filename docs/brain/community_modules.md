@@ -11,7 +11,7 @@ Install via Kalliope CLI
 kalliope install --git-url <git_url>
 ```
 
-E.g:
+Es:
 ```bash
 kalliope install --git-url https://github.com/kalliope-project/kalliope_neuron_wikipedia.git
 ```
@@ -48,7 +48,7 @@ kalliope uninstall --trigger-name <trigger_name>
 kalliope uninstall --ignal-name <signal_name>
 ```
 
-E.g:
+Es:
 ```bash
 kalliope uninstall --neuron-name hue
 ```

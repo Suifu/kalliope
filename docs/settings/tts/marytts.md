@@ -1,17 +1,17 @@
-MaryTTS is an open-source, multilingual Text-to-Speech Synthesis platform written in Java.
+MaryTTS è una piattaforma open-source di sintesi vocale multilingue scritta in Java.
 
-## Input parameters
+## Parametri d'input
 
-| Parameters | Required | Default   | Choices                           | Comment                                                    |
-| ---------- | -------- | --------- | --------------------------------- | ---------------------------------------------------------- |
-| voice      | yes      | None      | e.g. bits1, cmu-bdl, enst-camille | Run ./marytts list to check your installed voices          |
-| locale     | yes      | None      | e.g. de, en_US, fr                | Check http://localhost:59125/locales for installed locales |
-| host       | no       | localhost |                                   | Host address of your MaryTTS server                        |
-| port       | no       | 59125     |                                   | Port of your MaryTTS server                                |
+| Parametro  |Necessario| Default   | Valori possibili                  | Commento                                                            |
+| ---------- | -------- | --------- | --------------------------------- | ------------------------------------------------------------------- |
+| voice      | si       | None      | es. bits1, cmu-bdl, enst-camille  | Esegui "./marytts list" per controllare le voci installate          |
+| locale     | si       | None      | es. de, en_US, fr                 | Controlla "http://localhost:59125/locales" per le lingue installate |
+| host       | no       | localhost |                                   | Indirizzo host del tuo server MaryTTS                               |
+| port       | no       | 59125     |                                   | Porta del tuo server MaryTTS                                        |
 
-## Settings example
+## Esempio d'impostazioni
 
-For english voice on localhost add the following lines in your settings.yml:
+Per la voce inglese su localhost aggiungi le seguenti righe nel tuo settings.yml:
 ```
 text_to_speech:
   - marytts:
@@ -20,7 +20,7 @@ text_to_speech:
       cache: True
 ```
 
-For english voice on remote host with default port:
+Per voce inglese su host remoto con porta predefinita:
 ```
 text_to_speech:
   - marytts:
@@ -29,6 +29,6 @@ text_to_speech:
       host: 192.168.0.25
       cache: True
 ```
-## Notes :
+## Note :
 
->**Note:** You need to [install Marytts server](https://github.com/marytts/marytts-installer).
+>**Nota:** E' necessario [installare il server Marytts](https://github.com/marytts/marytts-installer).

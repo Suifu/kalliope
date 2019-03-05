@@ -1,39 +1,39 @@
-# Kalliope requirements for Debian Jessie/Stretch
+# Prerequisiti di Kalliope per Debian Jessie/Stretch
 
-## Debian packages requirements
+## Pacchetti necessari in Debian
 
-Edit `/etc/apt/sources.list` and check that you have `contrib` and `non-free` are enabled:
+Aprire `/etc/apt/sources.list` e controllare di avere `contrib` e `non-free` abilitati:
 
-On Debian Jessie:
+In Debian Jessie:
 ```bash
 deb http://httpredir.debian.org/debian jessie main contrib non-free
 deb-src http://httpredir.debian.org/debian jessie main contrib non-free
 ```
 
-On Debian Stretch:
+In Debian Stretch:
 ```bash
 deb http://httpredir.debian.org/debian stretch main contrib non-free
 deb-src http://httpredir.debian.org/debian stretch main contrib non-free
 ```
 
-Install some required system libraries and softwares:
+Installa le librerie di sistema e i softwares necessari:
 
 ```bash
 sudo apt-get update
 sudo apt-get install git python-dev libsmpeg0 libttspico-utils libsmpeg0 flac libffi-dev libffi-dev libssl-dev portaudio19-dev build-essential libssl-dev libffi-dev sox libatlas3-base mplayer libav-tools libjpeg-dev
 ```
 
-Let's install the last release of python-pip
+Andiamo a installare l'ultima versone di python-pip
 ```bash
 wget https://bootstrap.pypa.io/get-pip.py
 sudo python get-pip.py
 ```
 
-Then, with pip, the last release of setuptools
+Ora, con pip, l'ultima release di setuptools
 ```bash
 sudo pip install -U setuptools
 ```
-## Kalliope installation
+## Installare Kalliope
 
 {!installation/manual_installation_common.md!}
 

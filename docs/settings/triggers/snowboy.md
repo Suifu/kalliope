@@ -1,36 +1,36 @@
-## Parameters
+## Parametri
 
-You can create your magic word by connecting to [Snowboy](https://snowboy.kitt.ai/) and then download the trained model file.
+Puoi creare la tua hotword collegandoti a [Snowboy](https://snowboy.kitt.ai/) e poi scaricare il file generato che fungerà da modello.
 
-Once downloaded, place the file in your personal config folder and configure snowboy in your [your settings](../settings.md) following the table bellow
+Una volta scaricato, posiziona il file nella tua cartella config personale e [imposta snowboy](../settings.md) con la seguente tabella
 
-| parameter   | required | type   | default | choices         | comment                                                                                          |
-|-------------|----------|--------|---------|-----------------|--------------------------------------------------------------------------------------------------|
-| pmdl_file   | TRUE     | string |         |                 | Path to the snowboy model file. The path can be absolute or relative to the brain file           |
-| sensitivity | FALSE    | string | 0.5     | between 0 and 1 | Increasing the sensitivity value lead to better detection rate, but also higher false alarm rate |
+| Parametro   |Necessario|  Tipo  | Default | Valori possibili| Commento                                                                                                                         |
+|-------------|----------|--------|---------|-----------------|----------------------------------------------------------------------------------------------------------------------------------|
+| pmdl_file   | TRUE     | stringa|         |                 | Percorso del file del modello Snowboy. Il percorso può essere assoluto o relativo al file brain                                  |
+| sensitivity | FALSE    | stringa| 0.5     |    tra 0 e 1    | Aumentando il valore di sensibilità si ottiene una migliore velocità di rilevamento, ma anche un più alto tasso di falsi allarmi |
 
-## Example settings
+## Impostazioni d'esempio
 
 ```yaml
-# This is the trigger engine that will catch your magic work to wake up Kalliope. Only Snowboy is available so far
+# Questo è il trigger che catturerà la tua hotword per svegliare Kalliope. Solo Snowboy è disponibile finora
 default_trigger: "snowboy"
 
-# Trigger engine configuration
+# Caricare la configurazione del trigger
 triggers:
   - snowboy:
       pmdl_file: "trigger/snowboy/resources/kalliope-FR-40samples.pmdl"
 ```
 
-## Available Snowboy models
+## Modelli Snowboy disponibili
 
-If you want to keep "Kalliope" as the name of your bot, we recommend you to __enhance the existing Snowboy model for your language__.
+Se vuoi mantenere "Kalliope" come nome del tuo bot, ti consigliamo di __migliorare il modello Snowboy esistente per la tua lingua__.
 
-We will update the following list with all Kalliope model created by the community. If the model doesn't exist, please create one with the following syntax:
+Aggiorneremo il seguente elenco con tutti i modelli che la comunità ha creato per Kalliope. Se il modello non esiste, crearne uno con la seguente sintassi:
 ```
 kalliope-<language_code>
 ```
 
-E.g
+Es
 ```
 kalliope-FR
 kalliope-EN
@@ -38,14 +38,14 @@ kalliope-RU
 kalliope-DE
 kalliope-IT
 ```
-Then, open an issue or create a pull request to add the model to the list bellow.
+Quindi, apri una "issue" o crea una "pull request" per aggiungere il modello all'elenco seguente.
 
-> **Important note:** Do not enhance a model in the wrong language. Check the pronunciation before recording your voice!
+> **Nota importante:** Non migliorare un modello nella lingua sbagliata. Controlla la pronuncia prima di registrare la tua voce!
 
-| Name                                                 | language | Pronounced   |
+| Nome                                                 |  lingua  |  Pronuncia   |
 |------------------------------------------------------|----------|--------------|
-| [kalliope-FR](https://snowboy.kitt.ai/hotword/1363)  | French   | Ka-lio-pé    |
-| [kalliope-EN](https://snowboy.kitt.ai/hotword/2540)  | English  | kə-LIE-ə-pee |
-| [kalliope-RU](https://snowboy.kitt.ai/hotword/2964)  | Russian  | каллиопа     |
-| [kalliope-DE](https://snowboy.kitt.ai/hotword/4324)  | German   | Ka-lio-pe    |
-| [kalliope-IT](https://snowboy.kitt.ai/hotword/10650) | Italian  | Ka-lljo-pe   |
+| [kalliope-FR](https://snowboy.kitt.ai/hotword/1363)  | Francese | Ka-lio-pé    |
+| [kalliope-EN](https://snowboy.kitt.ai/hotword/2540)  | Inglese  | kə-LIE-ə-pee |
+| [kalliope-RU](https://snowboy.kitt.ai/hotword/2964)  | Russo    | каллиопа     |
+| [kalliope-DE](https://snowboy.kitt.ai/hotword/4324)  | Tedesco  | Ka-lio-pe    |
+| [kalliope-IT](https://snowboy.kitt.ai/hotword/10650) | Italiano | Ka-lljo-pe   |

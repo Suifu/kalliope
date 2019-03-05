@@ -1,11 +1,11 @@
-Default player of kalliope.
-This Player is based on the [mplayer engine](http://www.mplayerhq.hu/design7/news.html)
+Player predefinito di kalliope.
+Questo  Player è basato sull'[engine mplayer ](http://www.mplayerhq.hu/design7/news.html)
 
-## Input parameters
+## Parametri d'input
 
-No parameter required
+Nessun parametro richiesto
 
-## Settings example
+## Esempio d'impostazioni
 
 ```yaml
 default_player: "mplayer"
@@ -14,6 +14,6 @@ players:
   - mplayer: {}
 ```
 
-## Notes
+## Note
 
->**Note:** This Player handles mp3 and wav format.
+>**Nota:** Questo lettore gestisce sia il formato mp3 che wav.

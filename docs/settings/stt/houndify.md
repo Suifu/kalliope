@@ -1,15 +1,15 @@
-This STT is based on the [Houndify](https://www.houndify.com/) engine.
+Questo STT è basato sull'engine [Houndify](https://www.houndify.com/) .
 
-This STT support english only.
+Questo STT supporta solo l'inglese.
 
-## Input parameters
+## Parametri d'input
 
-| parameter | required  | default | choices      | comment   |
-|:---------:|-----------|---------|--------------|-----------|
-| key       | Yes       | None    |              | User info |
-| client_id | Yes       | None    |              | User info |
+| Parametro |Necessario| Default |Valori possibili| Commento          |
+|:---------:|----------|---------|----------------|-------------------|
+| key       | Yes      | None    |                |Informazioni utente|
+| client_id | Yes      | None    |                |Informazioni utente|
 
-## Settings example
+## Esempio d'impostazioni
 
 ```yaml
 default_speech_to_text: "houndify"

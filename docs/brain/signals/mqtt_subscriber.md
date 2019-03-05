@@ -55,7 +55,7 @@ The light is now on
 
 ### Topic with json message
 
-In this example, the topic send a json payload that contain multiple information. E.g: `{"temperature": "25", "humidity": "30"}`
+In this example, the topic send a json payload that contain multiple information. Es: `{"temperature": "25", "humidity": "30"}`
 ```yaml
 - name: "test-mqtt-2"
   signals:

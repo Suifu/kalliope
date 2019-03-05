@@ -26,7 +26,7 @@ List of available parameter:
 
 | parameter   | required | default | choices                                                         | comment   |
 |-------------|----------|---------|-----------------------------------------------------------------|-----------|
-| year        | no       | *       | 4 digit                                                         | E.g: 2016 |
+| year        | no       | *       | 4 digit                                                         | Es: 2016  |
 | month       | no       | *       | month (1-12)                                                    |           |
 | day         | no       | *       | day of the (1-31)                                               |           |
 | week        | no       | *       | ISO week (1-53)                                                 |           |

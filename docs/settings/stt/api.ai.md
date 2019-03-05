@@ -1,13 +1,13 @@
-The api.ai STT is based on the [api.ai API](https://api.ai/)
+L'STT api.ai si basa sull'[API api.ai](https://api.ai/)
 
-## Input parameters
+## Parametri d'input
 
-| parameter | required  | default | choices                                            | comment   |
-|-----------|-----------|---------|----------------------------------------------------|-----------|
-| key       | yes       | None    |                                                    | User info |
-| language  | no        | en-US   | [lang](https://docs.api.ai/docs/languages)         |           |
+| Parametro |Necessario| Default | Valori possibili                           | Commento            |
+|-----------|----------|---------|--------------------------------------------|---------------------|
+| key       | SI       | None    |                                            | Informazioni utente |
+| language  | NO       | en-US   | [lang](https://docs.api.ai/docs/languages) |                     |
 
-## Settings example
+## Esempio d'impostazioni
 
 ```yaml
 default_speech_to_text: "apiai"

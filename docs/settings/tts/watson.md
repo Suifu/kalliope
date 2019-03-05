@@ -1,10 +1,10 @@
-This TTS is based on the [IBM Watson engine](https://www.ibm.com/watson/services/text-to-speech/).
+Questo TTS è basato sull'[engine IBM Watson](https://www.ibm.com/watson/services/text-to-speech/).
 
-## Installation
+## Installazione
 
-You need to create an account and then a project to get a location and an apikey.
+È necessario creare un account e quindi un progetto per ottenere una posizione e un apikey.
 
-Once you project created, you should see your credentials like the following
+Una volta che il progetto è stato creato, dovresti vedere le tue credenziali come le seguenti
 ```json
 {
   "url": "https://stream.watsonplatform.net/text-to-speech/api",
@@ -12,36 +12,36 @@ Once you project created, you should see your credentials like the following
 }
 ```
 
-## Input parameters
+## Parametri d'input
 
-| Parameters | Required | Default | Choices               | Comment                                           |
-|------------|----------|---------|-----------------------|---------------------------------------------------|
-| apikey     | yes      |         |                       | apikey provided by [IAM](https://console.bluemix.net/docs/services/watson/getting-started-iam.html)                 |
-| location   | no       |  LONDON |                       | [endpoint location](https://www.ibm.com/watson/developercloud/text-to-speech/api/v1/curl.html?curl#service-endpoint)                               |
-| voice      | yes      |         | See voice table below | Code that define the voice used for the synthesis |
+| Parametro  |Necessario| Default | Valori possibili          | Commento                                                                                                        |
+|------------|----------|---------|---------------------------|-----------------------------------------------------------------------------------------------------------------|
+| apikey     | si       |         |                           | apikey fornito da [IAM](https://console.bluemix.net/docs/services/watson/getting-started-iam.html)              |
+| location   | no       |  LONDON |                           | [destinazione](https://www.ibm.com/watson/developercloud/text-to-speech/api/v1/curl.html?curl#service-endpoint) |
+| voice      | si       |         | Vedi la tabella qui sotto | Codice che definisce la voce utilizzata per la sintesi                                                          |
 
 ## Voice code
 
-Voice code that can be used in the voice flag of your configuration
+Il Voice code può essere utilizzato nel flag della propria configurazione come di seguito
 
-| Languages              | Code                             | Gender |
-|------------------------|----------------------------------|--------|
-| German                 | de-DE_BirgitVoice                | Female |
-| German                 | de-DE_DieterVoice                | Male   |
-| UK English             | en-GB_KateVoice                  | Female |
-| US English             | en-US_AllisonVoice               | Female |
-| US English             | en-US_LisaVoice                  | Female |
-| US English             | en-US_MichaelVoice (the default) | Male   |
-| Castilian Spanish      | es-ES_EnriqueVoice               | Male   |
-| Castilian Spanish      | es-ES_LauraVoice                 | Female |
-| Latin American Spanish | es-LA_SofiaVoice                 | Female |
-| North American Spanish | es-US_SofiaVoice                 | Female |
-| French                 | fr-FR_ReneeVoice                 | Female |
-| Italian                | it-IT_FrancescaVoice             | Female |
-| Japanese               | ja-JP_EmiVoice                   | Female |
-| Brazilian Portuguese   | pt-BR_IsabelaVoice               | Female |
+| Lingua                   | Codice                           | Genere  |
+|--------------------------|----------------------------------|---------|
+| Tedesco                  | de-DE_BirgitVoice                | Femmina |
+| Tedesco                  | de-DE_DieterVoice                | Maschio |
+| Inglese UK               | en-GB_KateVoice                  | Femmina |
+| Inglese US               | en-US_AllisonVoice               | Femmina |
+| Inglese US               | en-US_LisaVoice                  | Femmina |
+| Inglese US               | en-US_MichaelVoice (the default) | Maschio |
+| Spagnolo Castigliano     | es-ES_EnriqueVoice               | Maschio |
+| Spagnolo Castigliano     | es-ES_LauraVoice                 | Femmina |
+| Spagnolo LatinoAmericano | es-LA_SofiaVoice                 | Femmina |
+| Spagnolo Nord Americano  | es-US_SofiaVoice                 | Femmina |
+| Francese                 | fr-FR_ReneeVoice                 | Femmina |
+| Italiano                 | it-IT_FrancescaVoice             | Femmina |
+| Giapponese               | ja-JP_EmiVoice                   | Femmina |
+| Portoghese Brasiliano    | pt-BR_IsabelaVoice               | Femmina |
 
-## Settings example
+## Esempio d'impostazioni
 
 ```yaml
 default_text_to_speech: "watson"
@@ -53,6 +53,6 @@ text_to_speech:
       location: "https://stream-fra.watsonplatform.net/text-to-speech/api"
 ```
 
-## Notes
+## Note
 
-This TTS engine is free for less than 10,000 Characters per Month.
+Questo motore TTS è gratuito per meno di 10.000 caratteri al mese.

@@ -31,7 +31,7 @@ If you want to install a particular branch you can specify it with an argument f
 curl -s https://raw.githubusercontent.com/kalliope-project/kalliope/master/install/rpi_install_kalliope.sh | bash -s <branch_name>
 ```
 
-E.g
+Es
 ```bash
 curl -s https://raw.githubusercontent.com/kalliope-project/kalliope/master/install/rpi_install_kalliope.sh | bash -s dev
 ```
@@ -117,7 +117,7 @@ Create the image following this syntax.
 sudo dcfldd if=<my_sd_card_disk_path> of=<target_path>/kalliope.img
 ```
 
-E.g
+Es
 ```bash
 sudo dcfldd if=/dev/sdb of=kalliope.img
 ```

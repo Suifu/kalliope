@@ -5,9 +5,9 @@ Interacts with HTTP and HTTPS web services.
 | parameter      | required | default | choices                                      | comment                                                                   |
 | -------------- | -------- | ------- | -------------------------------------------- | ------------------------------------------------------------------------- |
 | url            | YES      |         |                                              | HTTP or HTTPS URL in the form (http                                       | https)://host.domain[:port]/path |
-| headers        | NO       |         | E.g: Content-Type: 'application/json'        | Add custom HTTP headers to a request in the format of a YAML hash         |
-| data           | NO       |         | E.g: "{\"title\": \"foo\"}"                  | JSON data to send to the server. You must escape quotes in the YAML file. |
-| data_from_file | NO       |         | E.g: /path/to/my/file.json                   | JSON data loaded from a file.                                             |
+| headers        | NO       |         | Es: Content-Type: 'application/json'         | Add custom HTTP headers to a request in the format of a YAML hash         |
+| data           | NO       |         | Es: "{\"title\": \"foo\"}"                   | JSON data to send to the server. You must escape quotes in the YAML file. |
+| data_from_file | NO       |         | Es: /path/to/my/file.json                    | JSON data loaded from a file.                                             |
 | method         | NO       | GET     | GET, POST, DELETE, PUT, HEAD, PATCH, OPTIONS | The HTTP method of the request or response. It MUST be uppercase.         |
 | user           | NO       |         |                                              | username for the basic authentication.                                    |
 | password       | NO       |         |                                              | passwordfor the basic authentication.                                     |

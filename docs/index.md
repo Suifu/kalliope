@@ -1,14 +1,14 @@
-# Welcome to Kalliope's documentation
+# Benvenuti nella documentazione di Kalliope
 
-Kalliope is a framework that will help you to create your own personal assistant.
+Kalliope è un framework  che ti aiuterà a creare il tuo assistente personale.
 
-The concept is to create the [brain](brain/brain.md) of your assistant by attaching an input **signal** (vocal order, scheduled event, MQTT message, GPIO event, etc..) to one or multiple actions called **neurons**.
+Il concetto è quello di creare il [cervello](brain/brain.md) del tuo assistente collegando un **signal** di input (ordine vocale, evento programmato, messaggio MQTT, evento GPIO, etc..) a una o più azioni chiamate **neurons**.
 
-You can create your own Kalliope bot, by simply choosing and composing the [existing neurons](https://kalliope-project.github.io/neurons_marketplace.html) without writing any code. But, if you need a particular module, you can write it by yourself, add it to your project and propose it to the community.
+Puoi creare il tuo bot Kalliope, semplicemente scegliendo e componendo con i [neuroni esistenti](https://kalliope-project.github.io/neurons_marketplace.html) senza scrivere alcun codice. Ma se hai bisogno di un modulo particolare, puoi scriverlo da solo, aggiungerlo al tuo progetto e proporlo alla comunità.
 
-Kalliope can run on all Linux Debian based distribution including a Raspberry Pi and it's multi-lang. The only thing you need is a microphone.
+Kalliope può funzionare su tutte le distribuzioni Linux basate su Debian incluso Raspberry Pi ed è multi-lingua. L'unica cosa di cui hai bisogno è un microfono.
 
-Kalliope is easy-peasy to use, see the hello world
+Kalliope è facile da usare, guarda quest'hello world
 
 ```yaml
   - name: "Hello-world"
@@ -19,7 +19,7 @@ Kalliope is easy-peasy to use, see the hello world
           message: "Hello world!"
 ```
 
-If you want an idea of what you can do with Kalliope, click on the image below
+Se vuoi un'idea di ciò che puoi fare con Kalliope, premi l'immagine di seguito
 <p align="center">
 [![ENGLISH DEMO](https://img.youtube.com/vi/PcLzo4H18S4/0.jpg)](https://www.youtube.com/watch?v=PcLzo4H18S4)
 </p>

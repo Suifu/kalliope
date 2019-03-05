@@ -124,7 +124,7 @@ Run a subscriber
 mosquitto_sub -t 'this/is/a/topic'
 ```
 
-Then use your neuron. E.g
+Then use your neuron. Es
 ```yaml
 - name: "test-mqtt-publisher"
   signals:
