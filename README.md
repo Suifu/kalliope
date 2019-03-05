@@ -1,3 +1,5 @@
+**Questa e' solo una traduzione della wiki per il codice aggiornato [fai riferimento all'originale](https://github.com/kalliope-project/kalliope)**
+
 <p align="center">
     <img src="docs/images/Kalliope_logo_large.png">
 </p>
@@ -10,16 +12,15 @@
 [![PyPI](https://img.shields.io/pypi/pyversions/kalliope.svg)](https://pypi.python.org/pypi/kalliope/)
 [![Beerpay](https://beerpay.io/kalliope-project/kalliope/badge.svg?style=flat)](https://beerpay.io/kalliope-project/kalliope)
 
+Kalliope è un framework che ti aiuterà a creare il tuo assistente personale.
 
-Kalliope is a framework that will help you to create your own personal assistant.
+Il concetto è quello di creare il [cervello](brain/brain.md) del tuo assistente collegando un **signal** di input (ordine vocale, evento programmato, messaggio MQTT, evento GPIO, etc..) a una o più azioni chiamate **neurons**.
 
-The concept is to create the brain of your assistant by attaching an input **signal** (vocal order, scheduled event, MQTT message, GPIO event, etc..) to one or multiple actions called **neurons**.
+Puoi creare il tuo bot Kalliope, semplicemente scegliendo e componendo con i [neuroni esistenti](https://kalliope-project.github.io/neurons_marketplace.html) senza scrivere alcun codice. Ma se hai bisogno di un modulo particolare, puoi scriverlo da solo, aggiungerlo al tuo progetto e proporlo alla comunità.
 
-You can create your own Kalliope bot, by simply choosing and composing the [existing neurons](https://kalliope-project.github.io/neurons_marketplace.html) without writing any code. But, if you need a particular module, you can write it by yourself, add it to your project and propose it to the community.
+Kalliope può funzionare su tutte le distribuzioni Linux basate su Debian incluso Raspberry Pi ed è multi-lingua. L'unica cosa di cui hai bisogno è un microfono.
 
-Kalliope can run on all Linux Debian based distribution including a Raspberry Pi and it's multi-lang. The only thing you need is a microphone.
-
-Kalliope is easy-peasy to use, see the hello world
+Kalliope è facile da usare, guarda quest'hello world
 
 ```yaml
   - name: "Hello-world"
@@ -30,13 +31,13 @@ Kalliope is easy-peasy to use, see the hello world
           message: "Hello world!"
 ```
 
-If you want an idea of what you can do with Kalliope, click on the image below
+Se vuoi un'idea di ciò che puoi fare con Kalliope, premi l'immagine di seguito in inglese
 [![ENGLISH DEMO](https://img.youtube.com/vi/PcLzo4H18S4/0.jpg)](https://www.youtube.com/watch?v=PcLzo4H18S4)
 
 ## Links
 
-- [Documentation](https://kalliope-project.github.io/kalliope/)
-- [Kalliope website](https://kalliope-project.github.io/)
+- [Documentazione](https://kalliope-project.github.io/kalliope/)
+- [Website di Kalliope](https://kalliope-project.github.io/)
 - [Android app](https://play.google.com/store/apps/details?id=kalliope.project)
 - [Chat](https://gitter.im/kalliope-project/Lobby)
 
@@ -46,8 +47,8 @@ If you want an idea of what you can do with Kalliope, click on the image below
 
 ## Credits
 
-> **Meaning of Kalliope** Kalliope means "beautiful voice" from Greek καλλος (kallos) "beauty" and οψ (ops) "voice".
-In Greek mythology she was a goddess of epic poetry and eloquence, one of the nine Muses.
+> **Significato di Kalliope** Kalliope significa "voce bella" dal Greco καλλος (kallos) "bella" and οψ (ops) "voce".
+Nella mitologia greca era una delle nove Muse, dea della poesia epica e dell'eloquenza.
 
 - kə-LIE-ə-pee    (English)
 - Ka-li-o-pé      (French)
