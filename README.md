@@ -1,4 +1,4 @@
-**Questa e' solo una traduzione della wiki per il codice aggiornato [fai riferimento all'originale](https://github.com/kalliope-project/kalliope)**
+**Questa e' solo una [traduzione della wiki](https://github.com/Suifu/kalliope/wiki) per il codice aggiornato [fai riferimento all'originale](https://github.com/kalliope-project/kalliope)**
 
 <p align="center">
     <img src="docs/images/Kalliope_logo_large.png">
